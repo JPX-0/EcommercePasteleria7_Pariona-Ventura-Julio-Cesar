@@ -9,7 +9,10 @@ const CartWidget = () => {
     <li className="header__list">
       <Link to="/cart" className="btn btn__shop">
         <i className="btn__shop-icon"><AiOutlineShoppingCart /></i>
-        <span className="btn__shop-indicator">{test.counterProducts()}</span>
+        {
+          test.counterProducts() !== 0 &&
+          <span className="btn__shop-indicator">{test.counterProducts()}</span>
+        }
       </Link> 
     </li>
   )};

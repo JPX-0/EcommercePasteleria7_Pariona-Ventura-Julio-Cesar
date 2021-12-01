@@ -2,7 +2,7 @@
   display : grid;
   gap     : 1rem;
   margin  : auto;
-  width   : 98%;
+  width   : 95%;
   @include responsive(sm) {
     gap   : 0.5rem;
     width : 100%;

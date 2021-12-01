@@ -47,25 +47,23 @@ const Cart = () => {
               <p className="cart__table cart--division">Precio x Cantidad</p>
             </section>
             <section className="cart--middle">
-              <div>
-                {
-                  test.cartList.map(elem => 
-                  <figure key={`figureCart${elem.idItem}`} className="cart__figure">
-                    <picture className="cart__picture cart__table">
-                      <img src={elem.imgItem} alt={elem.nameItem} className="card__img"/>
-                    </picture>
-                    <h2 className="cart__table cart--division"><span>{elem.nameItem}</span></h2>
-                    <div className="cart__table cart--division">
-                      <p>${elem.priceItem} x {elem.qtyItem}</p>
-                      <p>${elem.priceItem * elem.qtyItem}</p>
-                    </div>
-                    <div className="cart__table cart--division">
-                      <button className="btn" onClick={() => deleteItem(elem.idItem)}><AiFillDelete/></button>
-                    </div>
-                  </figure>
-                  )
-                }
-              </div>
+              {
+                test.cartList.map(elem => 
+                <figure key={`figureCart${elem.idItem}`} className="cart__figure">
+                  <picture className="cart__picture cart__table">
+                    <img src={elem.imgItem} alt={elem.nameItem} className="card__img"/>
+                  </picture>
+                  <h2 className="cart__table cart--division"><span>{elem.nameItem}</span></h2>
+                  <div className="cart__table cart--division">
+                    <p>${elem.priceItem} x {elem.qtyItem}</p>
+                    <p>${elem.priceItem * elem.qtyItem}</p>
+                  </div>
+                  <div className="cart__table cart--division">
+                    <button className="btn" onClick={() => deleteItem(elem.idItem)}><AiFillDelete/></button>
+                  </div>
+                </figure>
+                )
+              }
             </section>
             <section className="cart--bottom">
               <button className="btn btn__addToCar" onClick={deleteItems}>Borrar Carrito <MdOutlineDeleteSweep/></button>

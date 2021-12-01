@@ -19,30 +19,25 @@
     margin                : 0 1rem;
     overflow              : hidden;
     text-align            : center;
-    width                 : calc(100% - 9rem);
+    width                 : calc(100% - 8rem);
     @include responsive(sm) {
       font-size             : 1.5rem;
       grid-template-columns : 10rem calc(100% - 24rem) 14rem;
-      grid-template-rows    : 3rem;
       margin                : 0;
-      width                 : calc(100% - 7rem);
+      width                 : calc(100% - 4rem);
     }
     @include responsive(xs) {
       grid-template-columns : 7rem calc(100% - 19rem) 12rem;
-      width                 : calc(100% - 6rem);
+      width                 : calc(100% - 4rem);
     }
   }
   &--middle {
-    max-height : 50vh;
-    overflow-y : auto;
+    display : grid;
+    padding : 1rem 0;
+    gap     : 1rem;
     padding    : 0 1rem;
     @include responsive(sm) {
       padding: 0;
-    }
-    & > div {
-      display : grid;
-      padding : 1rem 0;
-      gap     : 1rem;
     }
   }
   &--bottom {
@@ -80,51 +75,80 @@
       display : block;
       width   : 100%;
     }
-    & > .btn:hover {
-      color: red;
+    & > .btn {
+      color: white;
+      font-size: 2.3rem;
+      width: 100%;
+      height: 100%;
+      border-top-right-radius: 3rem;
+      border-bottom-right-radius: 3rem;
+      @include responsive(sm) {
+        font-size: 1.7rem;
+      }
+      &:hover {
+        color: red;
+      }
     }
+    
   }
   &__figure {
     align-items           : center;
-    background-color      : white;
+    background-color      : black;
     border-radius         : 3rem;
     display               : grid;
     font-size             : 2rem;
-    grid-template-columns : 12rem calc(100% - 37rem) 18rem 5rem;
+    grid-template-columns : 12rem calc(100% - 35rem) 18rem 5rem;
     grid-template-rows    : 8rem;
-    overflow              : hidden;
+    overflow              : hidden !important;
     text-align            : center;
     transition            : 0.3s;
+    border: 0.1rem solid transparent;
     &:hover {
       box-shadow: 0 0 0.8rem black;
-      // background-color: rgba(0, 0, 0, 0.1);
       @include responsive(sm) {
-        background-color : white;
         box-shadow       : none;
       }
     }
     @include responsive(sm) {
       font-size             : 1.5rem;
-      grid-template-columns : 10rem calc(100% - 31rem) 14rem 5rem;
+      grid-template-columns : 10rem calc(100% - 28rem) 14rem 4rem;
       grid-template-rows    : 5rem;
     }
     @include responsive(xs) {
       font-size             : 1rem;
-      grid-template-columns : 7rem calc(100% - 25rem) 12rem 4rem;
+      grid-template-columns : 7rem calc(100% - 23rem) 12rem 4rem;
     }
     & > .cart__table {
+      background: white;
       &:nth-child(3) {
         flex-wrap : wrap;
         padding   : 0.5rem;
+        border-top-right-radius: 3rem;
+        border-bottom-right-radius: 3rem;
       }
+      &:last-child {
+        background-color: transparent;
+        padding: 0;
+      }
+    }
+    & > div > p:nth-child(1) {
+      font-size  : 0.8em;
+      margin-top : auto;
+      @include responsive(sm) {
+        font-size: 1em;
+      }
+    }
+    & > div > p:nth-child(2) {
+      font-size     : 1.3em;
+      font-weight   : bold;
+      margin-bottom : auto;
     }
   }
   &__picture {
     background-color : white;
     display          : block;
-    height           : calc(100% - 2rem);
+    height           : 100%;
     margin           : auto;
-    padding          : 0;
-    width            : max-content;
+    padding          : 1rem;
   }
 }
